@@ -3,7 +3,8 @@ from django.http import HttpResponse
 
 # Create your views here.
 def home(request):
-    return HttpResponse('<h1>Dashboard Home</h1>')
+    return render(request, 'dashboard/home.html')
+
 
 def about(request):
-    return HttpResponse('<h1>Dashboard About')
+    return HttpResponse('<h1>Dashboard About</h1>')
