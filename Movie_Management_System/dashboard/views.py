@@ -25,4 +25,4 @@ def home(request):
 
 
 def about(request):
-    return render(request, 'dashboard/about.html')
+    return render(request, 'dashboard/about.html', {'title': 'About Page'})
