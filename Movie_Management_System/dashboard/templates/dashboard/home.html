@@ -1,14 +1,14 @@
 {% extends "dashboard/base.html" %}
 {% block content %}
-  {% for post in posts %}
+  {% for movie in movies %}
     <article class="media content-section">
       <div class="media-body">
         <div class="article-metadata">
-          <a class="mr-2" href="#">{{ post.director }}</a>
-          <small class="text-muted">{{ post.date_posted }}</small>
+          <a class="mr-2" href="#">{{ movie.author}}</a>
+          <small class="text-muted">{{ movie.release_date }}</small>
         </div>
-        <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
-        <p class="article-content">{{ post.description }}</p>
+        <h2><a class="article-title" href="#">{{ movie.title }}</a></h2>
+        <p class="article-content">{{ movie.description }}</p>
       </div>
     </article>
   {% endfor %}
