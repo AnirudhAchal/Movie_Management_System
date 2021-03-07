@@ -5,7 +5,7 @@
       <div class="media-body">
         <div class="article-metadata">
           <a class="mr-2" href="#">{{ movie.author}}</a>
-          <small class="text-muted">{{ movie.release_date }}</small>
+          <small class="text-muted">{{ movie.release_date|date:"F d, Y" }}</small>
         </div>
         <h2><a class="article-title" href="#">{{ movie.title }}</a></h2>
         <p class="article-content">{{ movie.description }}</p>
