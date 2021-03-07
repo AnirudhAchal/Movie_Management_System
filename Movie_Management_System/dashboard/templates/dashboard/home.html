@@ -9,6 +9,15 @@
         </div>
         <h2><a class="article-title" href="#">{{ movie.title }}</a></h2>
         <p class="article-content">{{ movie.description }}</p>
+        <div>
+          <ul>
+            <li>Language: {{ movie.language }}</li>
+            <li>PG Rating: {{ movie.pg_rating }}</li>
+            <li>Duration: {{ movie.duration }}</li>
+          </ul>
+        </div>
+
+
       </div>
     </article>
   {% endfor %}
