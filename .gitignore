@@ -1,6 +1,7 @@
 # Folders
 env/
 __pycache__/
+.vscode/
 
 # Files
 *config.py
