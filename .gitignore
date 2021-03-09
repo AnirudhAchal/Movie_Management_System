@@ -2,6 +2,7 @@
 env/
 __pycache__/
 .vscode/
+profile_pics/
 
 # Files
 *config.py
