@@ -38,7 +38,7 @@ def home(request):
             ORDER_BY = "release_date"
 
         # Get desc
-        if request.GET.get('order_by'):
+        if request.GET.get('desc'):
             DESC = "DESC"
         else:
             DESC = ""
@@ -46,14 +46,17 @@ def home(request):
     languages_query = f'SELECT DISTINCT 1 as id, language FROM dashboard_movie'
     genres_query = f'SELECT DISTINCT 1 as id, genre FROM dashboard_movie'
     pg_ratings_query = f'SELECT DISTINCT 1 as id, pg_rating FROM dashboard_movie ORDER BY pg_rating'
-    movies_query = f"""SELECT * FROM dashboard_movie
+    movies_query = f"""
+                        SELECT * FROM dashboard_movie
                         WHERE language IN {LANGUAGES}
                         AND genre in {GENRES}
                         AND duration <= {DURATION}
                         AND pg_rating <= {PG_RATING}
                         ORDER BY {ORDER_BY}
-                        {DESC}"""
+                        {DESC}
+                    """
 
+    print(movies_query)
     context = {
         # 'movies': Movie.objects.all()
         'movies': Movie.objects.raw(movies_query),
