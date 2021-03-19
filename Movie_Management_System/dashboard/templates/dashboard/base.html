@@ -60,20 +60,33 @@
           <div class="content-section">
             <h3>Our Sidebar</h3>
             <p class='text-muted'>Add filters here
-              <!-- <ul class="list-group">
-                <li class="list-group-item list-group-item-light">Option 1</li>
-                <li class="list-group-item list-group-item-light">Option 2</li>
-                <li class="list-group-item list-group-item-light">Option 3</li>
-                <li class="list-group-item list-group-item-light">Option 4</li>
-              </ul> -->
               <form method="GET">
-                <input type="checkbox" id="english" name="language" value="english">
-                <label for="english">English</label><br>
-                <input type="checkbox" id="hindi" name="language" value="hindi">
-                <label for="hindi">Hindi</label><br>
-                <input type="checkbox" id="other" name="language" value="other">
-                <label for="other">Other</label>
-                <input type="submit" value="Submit">
+                <ul class="list-group">
+                  <li class="list-group-item list-group-item-light">
+                    <h5> Language </h5>
+                    {% for language in languages %}
+                      <input type="checkbox" id={{language.language}} name="language" value={{language.language}}>
+                      <label for={{language.language}}>{{language.language}}</label><br>
+                    {% endfor %}
+                  </li>
+                  <li class="list-group-item list-group-item-light">
+                    <h5> Genre </h5>
+                    {% for genre in genres %}
+                      <input type="checkbox" id={{genre.genre}} name="genre" value={{genre.genre}}>
+                      <label for={{genre.genre}}>{{genre.genre}}</label><br>
+                    {% endfor %}
+                  </li>
+                  <li class="list-group-item list-group-item-light">Option 3</li>
+                  <li class="list-group-item list-group-item-light">Option 4</li>
+                  <li class="list-group-item list-group-item-light">Option 5</li>
+                  <li class="list-group-item list-group-item-light">Option 6</li>
+                  <li class="list-group-item list-group-item-light">
+                    <input type="submit" value="Submit">
+                  </li>
+                </ul>
+
+
+
               </form>
             </p>
           </div>
