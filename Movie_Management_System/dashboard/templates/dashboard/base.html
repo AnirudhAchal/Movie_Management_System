@@ -66,27 +66,35 @@
                     <h5> Language </h5>
                     {% for language in languages %}
                       <input type="checkbox" id={{language.language}} name="language" value={{language.language}}>
-                      <label for={{language.language}}>{{language.language}}</label><br>
+                      <label for={{language.language}}>{{language.language}}</label></br>
                     {% endfor %}
                   </li>
                   <li class="list-group-item list-group-item-light">
                     <h5> Genre </h5>
                     {% for genre in genres %}
                       <input type="checkbox" id={{genre.genre}} name="genre" value={{genre.genre}}>
-                      <label for={{genre.genre}}>{{genre.genre}}</label><br>
+                      <label for={{genre.genre}}>{{genre.genre}}</label></br>
                     {% endfor %}
                   </li>
-                  <li class="list-group-item list-group-item-light">Option 3</li>
+                  <li class="list-group-item list-group-item-light">
+                    <h5> Max Duration </h5>
+                    <input type="range" min="1" max="5" step="1" value="5" id="duration" name="duration" list="duration_ticks">
+                    <datalist id="duration_ticks">
+                      <option value="1" label="1%"></option>
+                      <option value="2">1</option>
+                      <option value="3"></option>
+                      <option value="4"></option>
+                      <option value="5" label="5%"></option>
+                    </datalist></br>
+                    <label for="duration">Select from 1-5 hours</label>
+                  </li>
                   <li class="list-group-item list-group-item-light">Option 4</li>
                   <li class="list-group-item list-group-item-light">Option 5</li>
                   <li class="list-group-item list-group-item-light">Option 6</li>
                   <li class="list-group-item list-group-item-light">
-                    <input type="submit" value="Submit">
+                    <input type="submit" value="Filter">
                   </li>
                 </ul>
-
-
-
               </form>
             </p>
           </div>
@@ -96,6 +104,7 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
