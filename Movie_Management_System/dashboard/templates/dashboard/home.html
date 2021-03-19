@@ -22,3 +22,77 @@
     </article>
   {% endfor %}
 {% endblock content %}
+
+{% block filter %}
+  <div class="col-md-4">
+    <div class="content-section">
+      <h3>Our Sidebar</h3>
+      <p class='text-muted'>Add filters here
+        <form method="GET">
+          <ul class="list-group">
+            <li class="list-group-item list-group-item-light">
+              <h5> Language </h5>
+              {% for language in languages %}
+                <input type="checkbox" id={{language.language}} name="language" value={{language.language}}>
+                <label for={{language.language}}>{{language.language}}</label></br>
+              {% endfor %}
+            </li>
+            <li class="list-group-item list-group-item-light">
+              <h5> Genre </h5>
+              {% for genre in genres %}
+                <input type="checkbox" id={{genre.genre}} name="genre" value={{genre.genre}}>
+                <label for={{genre.genre}}>{{genre.genre}}</label></br>
+              {% endfor %}
+            </li>
+            <li class="list-group-item list-group-item-light">
+              <h5> Max Duration </h5>
+              <input type="range" min="1" max="5" step="1" value="5" id="duration" name="duration" list="duration_ticks">
+              <datalist id="duration_ticks">
+                <option value="1" label="1%"></option>
+                <option value="2">1</option>
+                <option value="3"></option>
+                <option value="4"></option>
+                <option value="5" label="5%"></option>
+              </datalist></br>
+              <label for="duration">Select from 1-5 hours</label>
+            </li>
+            <li class="list-group-item list-group-item-light">
+              <h5> PG Rating </h5>
+              {% for pg_rating in pg_ratings %}
+                <input type="radio" id={{pg_rating.pg_rating}} name="pg_rating" value={{pg_rating.pg_rating}}>
+                <label for={{pg_rating.pg_rating}}>{{pg_rating.pg_rating}}</label>&emsp;
+              {% endfor %}
+            </li>
+            <li class="list-group-item list-group-item-light">
+              <h5> Order By </h5>
+              <input type="radio" id="release_date" name="order_by" value="release_date">
+              <label for="release_date">Release date</label></br>
+
+              <input type="radio" id="duration" name="order_by" value="duration">
+              <label for="duration">Duration</label></br>
+
+              <input type="radio" id="language" name="order_by" value="language">
+              <label for="language">Language</label></br>
+
+              <input type="radio" id="title" name="order_by" value="title">
+              <label for="title">Title</label></br>
+
+              <input type="radio" id="genre" name="order_by" value="genre">
+              <label for="genre">Genre</label></br>
+
+              <input type="radio" id="pg_rating" name="order_by" value="pg_rating">
+              <label for="pg_rating">PG Rating</label></br>
+            </li>
+            <li class="list-group-item list-group-item-light">
+              <input type="checkbox" id="desc" name="desc" value="desc">
+              <label for="desc">Descreasing order</label></br>
+            </li>
+            <li class="list-group-item list-group-item-light">
+              <input type="submit" value="Filter">
+            </li>
+          </ul>
+        </form>
+      </p>
+    </div>
+  </div>
+{% endblock filter %}
