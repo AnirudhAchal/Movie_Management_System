@@ -60,12 +60,21 @@
           <div class="content-section">
             <h3>Our Sidebar</h3>
             <p class='text-muted'>Add filters here
-              <ul class="list-group">
+              <!-- <ul class="list-group">
                 <li class="list-group-item list-group-item-light">Option 1</li>
                 <li class="list-group-item list-group-item-light">Option 2</li>
                 <li class="list-group-item list-group-item-light">Option 3</li>
                 <li class="list-group-item list-group-item-light">Option 4</li>
-              </ul>
+              </ul> -->
+              <form method="GET">
+                <input type="checkbox" id="english" name="language" value="english">
+                <label for="english">English</label><br>
+                <input type="checkbox" id="hindi" name="language" value="hindi">
+                <label for="hindi">Hindi</label><br>
+                <input type="checkbox" id="other" name="language" value="other">
+                <label for="other">Other</label>
+                <input type="submit" value="Submit">
+              </form>
             </p>
           </div>
         </div>
