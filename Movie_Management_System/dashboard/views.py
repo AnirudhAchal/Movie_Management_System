@@ -1,4 +1,8 @@
 from django.shortcuts import render
+from django.views.generic import (
+    ListView,
+    DetailView
+)
 from .models import Movie
 
 # Create your views here.
@@ -67,6 +71,15 @@ def home(request):
 
     return render(request, 'dashboard/home.html', context)
 
+class MovieListView(ListView):
+    model = Movie
+    template_name = 'dashboard/home.html' 
+    context_object_name = 'movies'
+    ordering = ['-release_date']
+
+
+class MovieDetailView(DetailView):
+    model = Movie
 
 def about(request):
     return render(request, 'dashboard/about.html', {'title': 'About Page'})
