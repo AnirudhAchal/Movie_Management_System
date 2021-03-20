@@ -6,14 +6,17 @@
       <div class="article-metadata">
         <a class="mr-2" href="#">{{ object.author }}</a>
         <small class="text-muted">{{ object.release_date|date:"F d, Y" }}</small>
-      <h2 class="article-title" >{{ object.title }}</a></h2>
-      <p class="article-content">{{ object.description }}</p>
+        <h2 class="article-title" >{{ object.title }}</a></h2>
+        <p class="article-content">{{ object.description }}</p>
       </div>
-      <li>Language: {{ object.language }}</li>
-      <li>PG Rating: {{ object.pg_rating }}</li>
-      <li>Duration: {{ object.duration }}</li>
-      <li>Genre: {{ object.genre}}</li>
+      <ul>
+        <li>Language: {{ object.language }}</li>
+        <li>PG Rating: {{ object.pg_rating }}</li>
+        <li>Duration: {{ object.duration }}</li>
+        <li>Genre: {{ object.genre}}</li>
+      </ul>
+      <center><a class="btn btn-primary" href="#">Book Now</a></center>
+
     </div>
   </article>
-  <center><a class="mr-2" href="#">Book Now</a></center>
 {% endblock content %}

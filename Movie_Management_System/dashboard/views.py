@@ -68,8 +68,10 @@ def home(request):
 
     return render(request, 'dashboard/home.html', context)
 
-class MovieDetailView(DetailView):
-    model = Movie
 
 def about(request):
     return render(request, 'dashboard/about.html', {'title': 'About Page'})
+
+
+class MovieDetailView(DetailView):
+    model = Movie
