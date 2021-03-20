@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.views.generic import DetailView
 from .models import Movie
 
 # Create your views here.
@@ -67,6 +68,8 @@ def home(request):
 
     return render(request, 'dashboard/home.html', context)
 
+class MovieDetailView(DetailView):
+    model = Movie
 
 def about(request):
     return render(request, 'dashboard/about.html', {'title': 'About Page'})
