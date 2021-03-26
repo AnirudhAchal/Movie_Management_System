@@ -1,0 +1,28 @@
+{% extends "dashboard/base.html" %}
+{% block content %}
+{% if searched_movie %}
+    {% for movie in searched_movie %}
+        <article class="media content-section">
+
+            <img class="rounded-circle article-img" src="{{ movie.author.profile.image.url }}">
+            <div class="media-body">
+            <div class="article-metadata">
+                <a class="mr-2" href="#">{{ movie.author}}</a>
+                <small class="text-muted">{{ movie.release_date|date:"F d, Y" }}</small>
+            </div>
+            <h2><a class="article-title"  href="{% url 'movie-detail' movie.id %}">{{ movie.title }}</a></h2>
+            <p class="article-content">{{ movie.description }}</p>
+            <div>
+                <ul>
+                <li>Language: {{ movie.language }}</li>
+                <li>PG Rating: {{ movie.pg_rating }}</li>
+                <li>Duration: {{ movie.duration }}</li>
+                <li>Genre: {{ movie.genre }}</li>
+                </ul>
+            </div>
+            </div>
+        </article>
+    {% endfor %}
+{% endif %}
+
+{% endblock content %}

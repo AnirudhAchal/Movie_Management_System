@@ -75,3 +75,9 @@ def about(request):
 
 class MovieDetailView(DetailView):
     model = Movie
+
+def search_bar(request):
+    if request.method == 'GET':
+        search = request.GET.get('search')
+        movie = Movie.objects.all().filter(title = search)
+        return render(request,'dashboard/search_bar.html',{'searched_movie': movie})
