@@ -78,11 +78,10 @@ class MovieDetailView(DetailView):
 def search_bar(request):
     if request.method == 'GET':
         search = request.GET.get('search')
-
-        search_query = f'Select * from dashboard_movie where title = "{search}"'
-        movie = Movie.objects.raw(search_query)
+        search_query = f'SELECT * FROM dashboard_movie WHERE title = "{search}"'
 
         context = {
-            'searched_movie' : movie
+            'searched_movie' : Movie.objects.raw(search_query)
         }
-        return render(request,'dashboard/search_bar.html',context)
+        
+        return render(request,'dashboard/search_bar.html', context)
