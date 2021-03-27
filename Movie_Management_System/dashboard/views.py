@@ -59,7 +59,6 @@ def home(request):
 
     print(movies_query)
     context = {
-        # 'movies': Movie.objects.all()
         'movies': Movie.objects.raw(movies_query),
         'languages': Movie.objects.raw(languages_query),
         'genres': Movie.objects.raw(genres_query),
@@ -79,5 +78,11 @@ class MovieDetailView(DetailView):
 def search_bar(request):
     if request.method == 'GET':
         search = request.GET.get('search')
-        movie = Movie.objects.all().filter(title = search)
-        return render(request,'dashboard/search_bar.html',{'searched_movie': movie})
+
+        search_query = f'Select * from dashboard_movie where title = "{search}"'
+        movie = Movie.objects.raw(search_query)
+
+        context = {
+            'searched_movie' : movie
+        }
+        return render(request,'dashboard/search_bar.html',context)
