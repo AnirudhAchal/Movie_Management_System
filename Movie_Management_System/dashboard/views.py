@@ -1,6 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib import messages
 from django.views.generic import DetailView
 from .models import Movie
+from .forms import BookingForm
 
 # Create your views here.
 def home(request):
@@ -70,6 +72,25 @@ def home(request):
 
 def about(request):
     return render(request, 'dashboard/about.html', {'title': 'About Page'})
+
+def book(request,pk):
+
+    if request.method == 'POST':
+        b_form = BookingForm(request.POST, instance=request.user)
+        if b_form.is_valid():
+            b_form.save()
+            messages.success(request, f'Your Booking Was Succesfull')
+            return redirect('/')
+    else:
+        b_form = BookingForm(instance=request.user)
+
+
+    context = {
+        'b_form': b_form,
+        'movies': Movie.objects.get(pk=pk),
+        'pkey': pk
+    }
+    return render(request, 'dashboard/booking.html', context)
 
 
 class MovieDetailView(DetailView):
