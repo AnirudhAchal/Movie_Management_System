@@ -76,13 +76,14 @@ def about(request):
 def book(request,pk):
 
     if request.method == 'POST':
-        b_form = BookingForm(request.POST, instance=request.user)
+        b_form = BookingForm(request.POST)
         if b_form.is_valid():
+            b_form.instance.user = request.user
             b_form.save()
             messages.success(request, f'Your Booking Was Succesfull')
             return redirect('/')
     else:
-        b_form = BookingForm(instance=request.user)
+        b_form = BookingForm()
 
 
     context = {

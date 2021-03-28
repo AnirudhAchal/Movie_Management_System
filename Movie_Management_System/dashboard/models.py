@@ -61,7 +61,6 @@ class Show(models.Model):
 
 class Booking(models.Model):
     number_of_seats = models.IntegerField()
-    time_stamp = models.DateTimeField()
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     show = models.ForeignKey(Show, on_delete=models.CASCADE)
 
