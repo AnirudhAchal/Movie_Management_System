@@ -8,7 +8,6 @@ class BookingForm(forms.ModelForm):
         fields = ('number_of_seats', 'show')
 
         def __init__(self,movie_id,*args, **kwargs):
-            bruhhh,fuck,this,shit,lmao
             super(BookingForm, self).__init__(*args, **kwargs)
             self.fields['show'].queryset = Show.objects.get(movie_id=movie_id)
 
