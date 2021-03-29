@@ -33,7 +33,7 @@ class Cinema(models.Model):
     city = models.ForeignKey(City, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.name
+        return f"{self.name} {self.city}"
 
 
 class CinemaHall(models.Model):
@@ -42,7 +42,7 @@ class CinemaHall(models.Model):
     cinema = models.ForeignKey(Cinema, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.name
+        return f"{self.cinema} {self.name}"
 
 
 class CinemaSeat(models.Model):
