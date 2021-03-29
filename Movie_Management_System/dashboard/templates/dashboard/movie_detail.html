@@ -15,8 +15,9 @@
         <li>Duration: {{ object.duration }}</li>
         <li>Genre: {{ object.genre}}</li>
       </ul>
+      {% if user.is_authenticated %}
       <center><a class="btn btn-primary" href="book">Book Now</a></center>
-
+      {% endif %}
     </div>
   </article>
 {% endblock content %}
