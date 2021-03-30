@@ -1,7 +1,26 @@
 {% extends "dashboard/base.html" %}
 {% block content %}
   <h1>My Bookings</h1>
+
   {% for booking in movie_bookings %}
-    {{booking}}
+    <article class="media content-section">
+      <div class="media-body">
+        <div class="article-metadata">
+          <a class="mr-2" href="#">{{ booking.show.movie.author}}</a>
+          <small class="text-muted">{{ booking.show.movie.release_date|date:"F d, Y" }}</small>
+        </div>
+        <h3><a class="article-title"  href="{% url 'movie-detail' booking.show.movie.id %}">{{ booking.show.movie.title }}</a></h3>
+        <div>
+          <ul>
+            <li>Cinema: {{ booking.show.cinema_hall.cinema}}</li>
+            <li>Show Timings: {{ booking.show.start_time }}</li>
+            <li>Number of seats Reserved: {{ booking.number_of_seats}}</li> 
+          </ul>
+        </div>
+      </div>
+    </article>
   {% endfor %}
+
+
+
 {% endblock content %}
