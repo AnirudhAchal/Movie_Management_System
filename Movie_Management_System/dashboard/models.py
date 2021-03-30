@@ -50,6 +50,9 @@ class CinemaSeat(models.Model):
     type = EnumField(choices=['Basic', 'Executive', 'Premium', 'VIP'])
     cinema_hall = models.ForeignKey(CinemaHall, on_delete=models.CASCADE)
 
+    def __str__(self):
+        return f"{self.cinema_hall} {self.type} {self.seat_number}"
+
 
 class Show(models.Model):
     date = models.DateField()
@@ -57,6 +60,9 @@ class Show(models.Model):
     end_time = models.DateTimeField()
     cinema_hall = models.ForeignKey(CinemaHall, on_delete=models.CASCADE)
     movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"{self.start_time.strftime('%d-%m-%Y %H:%M:%S') }"
 
 
 class Booking(models.Model):

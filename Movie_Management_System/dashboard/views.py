@@ -76,15 +76,14 @@ def about(request):
 def book(request,pk):
 
     if request.method == 'POST':
-        b_form = BookingForm(request.POST)
+        b_form = BookingForm(request.POST, pk)
         if b_form.is_valid():
             b_form.instance.user = request.user
             b_form.save()
             messages.success(request, f'Your Booking Was Succesfull')
             return redirect('/')
     else:
-        b_form = BookingForm()
-
+        b_form = BookingForm(movie_id=pk)
 
     context = {
         'b_form': b_form,
@@ -105,5 +104,5 @@ def search_bar(request):
         context = {
             'searched_movie' : Movie.objects.raw(search_query)
         }
-        
+
         return render(request,'dashboard/search_bar.html', context)
