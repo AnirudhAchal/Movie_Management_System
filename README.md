@@ -1,7 +1,6 @@
 # Movie_Management_System
-DBMS Project
 
-This is a project made for Database Systems course. 
+This is a project made for Database Systems Lab course. 
 
 ## To run:  
 
