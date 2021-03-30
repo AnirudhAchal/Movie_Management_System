@@ -15,8 +15,22 @@ python manage.py runserver
 
 # Screenshots
 
-![](Screenshots/Profile.png)  
-![](Screenshots/Movie_Page.png)  
-![](Screenshots/admin.png)  
-![](Screenshots/dashboard.png)  
+## Profile
+
+![](Screenshots/Profile.png)
+
+## Movie Page
+
+![](Screenshots/Movie_Page.png)
+
+## Admin Panel
+
+![](Screenshots/admin.png)
+
+## Movie Dashboard
+
+![](Screenshots/dashboard.png)
+
+## Filters
+
 ![](Screenshots/Filters.png) 
