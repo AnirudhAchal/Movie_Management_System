@@ -70,6 +70,9 @@ class Booking(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     show = models.ForeignKey(Show, on_delete=models.CASCADE)
 
+    def __str__(self):
+        return f"{self.user} {self.show}"
+
 
 class ShowSeat(models.Model):
     price = models.FloatField()

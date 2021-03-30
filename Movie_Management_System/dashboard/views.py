@@ -69,13 +69,13 @@ def home(request):
 
     return render(request, 'dashboard/home.html', context)
 
-def about(request):
+def my_bookings(request):
     context = {
-        'title': 'About Page',
+        'title': 'my_bookings Page',
         'movie_bookings': Booking.objects.filter(user=request.user),
     }
 
-    return render(request, 'dashboard/about.html', context)
+    return render(request, 'dashboard/my_bookings.html', context)
 
 def book(request, pk):
     if request.method == 'POST':
