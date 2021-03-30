@@ -5,14 +5,13 @@
   <form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     <fieldset class="form-group">
-        <legend class="border-bottom mb-4">Booking Form</legend>
+        <legend class="border-bottom mb-4">{{ movie.title }}</legend>
         {{ b_form|crispy }}
     </fieldset>
-    
+
     <div class="form-group">
         <button class="btn btn-outline-info" type="submit">Book</button>
     </div>
-    
   </form>
   </div>
 {% endblock content %}

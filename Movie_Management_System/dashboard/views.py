@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.views.generic import DetailView
-from .models import Movie
+from .models import Movie, Booking
 from .forms import BookingForm
 
 # Create your views here.
@@ -69,9 +69,14 @@ def home(request):
 
     return render(request, 'dashboard/home.html', context)
 
-
 def about(request):
-    return render(request, 'dashboard/about.html', {'title': 'About Page'})
+    context = {
+        'title': 'About Page',
+        # 'bookings':
+        'movie_bookings': Booking.objects.filter(user=request.user),
+
+    }
+    return render(request, 'dashboard/about.html', context)
 
 def book(request,pk):
 
@@ -87,9 +92,10 @@ def book(request,pk):
 
     context = {
         'b_form': b_form,
-        'movies': Movie.objects.get(pk=pk),
+        'movie': Movie.objects.get(pk=pk),
         'pkey': pk
     }
+
     return render(request, 'dashboard/booking.html', context)
 
 
