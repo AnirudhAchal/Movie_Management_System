@@ -72,23 +72,21 @@ def home(request):
 def about(request):
     context = {
         'title': 'About Page',
-        # 'bookings':
         'movie_bookings': Booking.objects.filter(user=request.user),
-
     }
+
     return render(request, 'dashboard/about.html', context)
 
-def book(request,pk):
-
+def book(request, pk):
     if request.method == 'POST':
-        b_form = BookingForm(request.POST, pk)
+        b_form = BookingForm(request.POST, pk=pk)
         if b_form.is_valid():
             b_form.instance.user = request.user
             b_form.save()
             messages.success(request, f'Your Booking Was Succesfull')
             return redirect('/')
     else:
-        b_form = BookingForm(movie_id=pk)
+        b_form = BookingForm(pk=pk)
 
     context = {
         'b_form': b_form,

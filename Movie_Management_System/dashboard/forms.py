@@ -7,6 +7,7 @@ class BookingForm(forms.ModelForm):
         model = Booking
         fields = ('number_of_seats', 'show')
 
-    def __init__(self,movie_id, *args, **kwargs):
+    def __init__(self, *args, **kwargs):
+        movie_id = kwargs.pop('pk')
         super(BookingForm, self).__init__(*args, **kwargs)
         self.fields['show'].queryset = Show.objects.filter(movie_id=movie_id)
