@@ -16,7 +16,7 @@ python manage.py runserver
 # Screenshots
 
 ![](Screenshots/Profile.png)  
-![](Screenshots/Movies.png)  
+![](Screenshots/Movie_Page.png)  
 ![](Screenshots/admin.png)  
 ![](Screenshots/dashboard.png)  
 ![](Screenshots/Filters.png) 
