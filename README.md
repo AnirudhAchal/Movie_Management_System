@@ -2,6 +2,12 @@
 
 This is a project made for Database Systems Lab course. 
 
+Team Members
+
+1) Nanda Kishore - 191CS140
+2) Anirudh Achal - 191CS108
+3) Rakshit P - 191CS147
+
 ## To run:  
 
 - Ensure you have MySQL and Python3 installed.
