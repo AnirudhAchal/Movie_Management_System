@@ -39,7 +39,7 @@ python manage.py runserver
 
 ## Login Page
 
-![](Screenshots/Login_Page.png) 
+![](Screenshots/Login_Page.jpeg) 
 
 ## Filters
 
@@ -47,8 +47,8 @@ python manage.py runserver
 
 ## Booking Page
 
-![](Screenshots/Booking_Page.png)
+![](Screenshots/Booking_Page.jpeg)
 
 ## User Bookings
 
-![](Screenshots/Bookings.png)
+![](Screenshots/Bookings.jpeg)
