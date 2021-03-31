@@ -37,6 +37,18 @@ python manage.py runserver
 
 ![](Screenshots/dashboard.png)
 
+## Login Page
+
+![](Screenshots/Login_Page.png) 
+
 ## Filters
 
-![](Screenshots/Filters.png) 
+![](Screenshots/Filters.png)
+
+## Booking Page
+
+![](Screenshots/Booking_Page.png)
+
+## User Bookings
+
+![](Screenshots/Bookings.png)
