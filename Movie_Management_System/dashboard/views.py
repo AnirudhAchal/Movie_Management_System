@@ -54,7 +54,7 @@ def home(request):
                         WHERE language IN {LANGUAGES}
                         AND genre in {GENRES}
                         AND duration <= {DURATION}
-                        AND pg_rating <= {PG_RATING}
+                        AND pg_rating >= {PG_RATING}
                         ORDER BY {ORDER_BY}
                         {DESC}
                     """
