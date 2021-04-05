@@ -32,7 +32,7 @@ def home(request):
         if request.GET.get('pg_rating'):
             PG_RATING = request.GET.get('pg_rating')
         else:
-            PG_RATING = "(SELECT MAX(pg_rating) FROM dashboard_movie)"
+            PG_RATING = "(SELECT MIN(pg_rating) FROM dashboard_movie)"
 
         # Get order_by
         if request.GET.get('order_by'):
